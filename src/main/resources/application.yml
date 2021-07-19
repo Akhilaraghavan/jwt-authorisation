@@ -1,0 +1,31 @@
+spring:
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  task:
+    scheduling:
+      pool:
+        size: 4
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        generate_statistics: false
+        order_inserts: true
+        show_sql: false
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        jdbc:
+          batch_size: 50
+          time_zone: UTC
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLInnoDBDialect
+    show-sql: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/mytest?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: root
+    password : root
+
+logging:
+  level:
+    root: INFO
